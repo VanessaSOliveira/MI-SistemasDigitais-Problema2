@@ -10,6 +10,7 @@
 #include "altera_avalon_lcd_16207_regs.h"
 #include "altera_avalon_lcd_16207.h"
 #include "altera_avalon_uart_regs.h"
+#include "altera_avalon_jtag_uart_regs.h"
 
 
 main(){
@@ -21,17 +22,35 @@ main(){
 	iniciaLCD();
 
 	escreveLCD(0,0);
-	char comando[] = "AT+CWMODE_CUR=1";
+	char comando[] = "AT+CWMODE=1\r\n";
 
 	//printf("%d",strlen(comando));
-	escreveTXUart(strlen(comando), comando);
+	mandeComando(strlen(comando), comando);
 
-	char comando2[] = "AT+CWJAP_CUR=\"WLessLEDS\",\"HelloWorldMP31\"";
-	escreveTXUart(strlen(comando2), comando2);
-	//comando = "AT+CWMODE_CUR=1";
-	//lerRXUart();
+	char comando2[] = "AT+CWJAP=\"WLessLEDS\",\"HelloWorldMP31\"\r\n";
+	mandeComando(strlen(comando2), comando2);
 
-	//testeESP01();
+
+
+	/*
+	 * CIPMUX
+	 * CIPStart
+	 */
+
+	char comando3[] = "AT+CIPMUX=0\r\n";
+	mandeComando(strlen(comando3), comando3);
+
+	char comando4[] = "AT+CIPMODE=0\r\n";
+	mandeComando(strlen(comando4), comando4);
+
+	char comando5[] = "AT+CIPSTART=\"TCP\",\"192.168.1.102\",1883\r\n";
+	mandeComando(strlen(comando5), comando5);
+
+	conectaMQTT();
+
+	//char comando5[] = "AT+CIPSEND=\r\n";
+	//mandeComando(strlen(comando2), comando5);
+
 	//escreveLCDGenerico("testeLCD", 8);
 
 
@@ -83,6 +102,50 @@ main(){
 	return 0;
 }
 
+void conectaMQTT(){
+	char mensagemConexao[] = {0x10};
+	char mensagemConexao2[] = {0xc2};
+	char comando5[] = "AT+CIPSEND=1\r\n";
+	mandeComando(strlen(comando5), comando5);
+	mandeComando(strlen(mensagemConexao), mensagemConexao);
+
+	char comando6[] = "AT+CIPSEND=1\r\n";
+	mandeComando(strlen(comando6), comando6);
+	mandeComando(strlen(mensagemConexao2), mensagemConexao2);
+
+	char comando7[] = "AT+CIPCLOSE=0\r\n";
+	mandeComando(strlen(comando7), comando7);
+
+}
+
+void enviaMensagem(){
+	//AT+CIPCLOSE=0
+}
+
+void mandeComando(int tamanho, char* comando){
+
+
+	alt_putstr(comando);
+
+	char c ="";
+	while(1){
+
+		if((IORD_ALTERA_AVALON_UART_STATUS(UART_0_BASE) &(1<<7))){
+			c = IORD_ALTERA_AVALON_UART_RXDATA( UART_0_BASE );
+
+				IOWR_ALTERA_AVALON_JTAG_UART_DATA(JTAG_UART_0_BASE,c);
+
+				if(c == 'K'){
+					return;
+				}
+
+
+		}
+	}
+
+
+}
+
 
 
 
@@ -92,9 +155,9 @@ void escreveTXUart(int tamanho, char* comando){
 	unsigned long status = 0;
 	    int i;
 
-	    char data ="";
+	    char data[200] ="";
 	    char a = "";
-while(1){
+
 	  	printf("STATUS INICIO %x \n",IORD_ALTERA_AVALON_UART_STATUS(UART_0_BASE));
 
 	    for (i = 0; i < tamanho; i++) {
@@ -116,183 +179,34 @@ while(1){
 i=0;
 
 				while((IORD_ALTERA_AVALON_UART_STATUS(UART_0_BASE) &(1<<7))){
-				data = IORD_ALTERA_AVALON_UART_RXDATA( UART_0_BASE );
-				printf(" %c  ",data);
+				data[i] = IORD_ALTERA_AVALON_UART_RXDATA( UART_0_BASE );
 
-					if(data == 'K'){
+				printf(" %c  ",data[i]);
+
+					if(data[i] == 'K'){
+						for(int a =0;a<strlen(data);a++)
+							printf(" %c  ",data[a]);
 						return;
 					}
 
 				//printf("STATUS DEPOIS DA LEITURA - %x \n",IORD_ALTERA_AVALON_UART_STATUS(UART_0_BASE));
-
+					i++;
 				}
-}
-
-}
-
-void lerRXUart(){
-	char data;
-	char palavra[5];
-	int i=0;
-	unsigned long status = 0;
-	    while(1){
-
-	    	//escreveLCDGenerico("c",1);
-
-	    	//printf("\nEntrou no ler UART");
-	    	//IOWR_ALTERA_AVALON_UART_STATUS(UART_0_BASE, 0x80);
-
-
-//
-//
-//	    	if(IORD_ALTERA_AVALON_UART_STATUS(UART_0_BASE) & 0x16c){
-//
-
-
-        	data = IORD_ALTERA_AVALON_UART_RXDATA( UART_0_BASE );
-	    		if(data == 'K') {
-	    			printf("Status rx: %x", IORD_ALTERA_AVALON_UART_STATUS(UART_0_BASE));
-	    			printf("\n caracter  - %c ",data);
-	    			status =IORD_ALTERA_AVALON_UART_STATUS(UART_0_BASE);
-	    			    	printf(" Status rx dentro do loop - %x",status);
-	    		}
-
-
-/*
-	        if( (status & 0x1e8 ) != 0x1e8){
-	    		status = IORD_ALTERA_AVALON_UART_STATUS(UART_0_BASE);
-	    		printf(" Status rx dentro do loop - %x",status);
-
-
-	        }
-	        else{
-
-	        }
-//	    		usleep(1000);
-//	    	}
-
-*/
-	    	//printf("Depois do if");
-
-		    //palavra[i]=data;
-
-
-
-
-	    	 i++;
-		}
-
-
-
 
 
 }
 
 
-void testeESP01(){
-	//escreveLCDGenerico("testeLCD", 8);
-	// alt_putstr("AT\r\n"); //Envia comando teste em serial
 
-	/*IOWR(LCD_16207_0_BASE, 0, 0x02);//limpa display
-	usleep(2000);
-	IOWR(LCD_16207_0_BASE, 0, 0x01); // coloca cursor no inicio
-	usleep(2000);*/
-
-	/************************** Envia AT ************************/
-
-	char at[2] = "AT";
-
-	usleep(1000);
-
-	for(int i=0;  ;i++){
-		 IOWR_ALTERA_AVALON_UART_TXDATA(UART_0_BASE, at[i]);
-		 usleep(1000);
-
-	}
-
-
-	IOWR_ALTERA_AVALON_UART_TXDATA(UART_0_BASE, '\r');
-	usleep(1000);
-	IOWR_ALTERA_AVALON_UART_TXDATA(UART_0_BASE, '\n');
-	usleep(1000);
-
-
-	/******************** Recebe resposta*************************/
-	 char response = 'T';
-
-	 while(response != 'K'){ //O ESP deve responder com um OK
-		 response= IORD_ALTERA_AVALON_UART_RXDATA(UART_0_BASE);
-		 usleep(1000);
-		 //IOWR(LCD_16207_0_BASE, 2, response);
-		 //usleep(1000);
-		 printf("\n\n caracter  : %c", response );
-
-	 }
-
-
-/*
-	 if(response == 'K'){
-
-		IOWR(LEDVERMELHO_BASE, 0, 0);
-		IOWR(LEDVERDE_BASE, 0, 0);
-		IOWR(LEDAZUL_BASE, 0, 1);
-		esperar();
-		esperar();
-	 }
-
-
-*/
-
-
-}
 
 /*
  * SSID - WLessLEDS
  * Senha - HelloWorldMP31
  * Endereço do Broker - rpibroker.local
- * ip: 192.168.1.100   -d (pub)
+ * ip: 192.168.1.102   -d (pub)
  */
 
-void conectaESP01(){
 
-
-	 alt_putstr("AT+CWMODE_CUR=1"); //Seta como uma station para se conectar a uma rede
-	 //Parece que o comando de conexão só funciona se ele estiver neste modo
-
-
-	 char response[200]; //Responde com a instrução AT enviada
-	 int i =0;
-	 while(!strcmp(response, 'AT+CWMODE_CUR=1')){ //O ESP deve responder com um OK
-		 response[i]= IORD_ALTERA_AVALON_UART_RXDATA(UART_0_BASE);
-		 i++;
-	 }
-
-	 char response2[2]; //Responde também com um OK
-	 i =0;
-	 while(!strcmp(response2, 'OK')){ //O ESP deve responder com um OK
-		 response2[i]= IORD_ALTERA_AVALON_UART_RXDATA(UART_0_BASE);
-		 i++;
-	 }
-
-
-	 alt_putstr("AT+CWJAP_CUR=WLessLEDS,HelloWorldMP31");
-
-	 char response3[200]; //Responde com a instrução AT enviada
-	 i =0;
-	 while(!strcmp(response3, 'AT+CWJAP_CUR=WLessLEDS,HelloWorldMP31')){ //O ESP deve responder com um OK
-		 response3[i]= IORD_ALTERA_AVALON_UART_RXDATA(UART_0_BASE);
-		 i++;
-	 }
-
-	 char response4[2]; //Responde também com um OK
-	 i =0;
-	 while(!strcmp(response4, 'OK')){ //O ESP deve responder com um OK
-		 response4[i]= IORD_ALTERA_AVALON_UART_RXDATA(UART_0_BASE);
-		 i++;
-	 }
-
-
-}
 
 void escreveLCDGenerico(char* palavra, int n){ // n é o tamanho da palavra
 

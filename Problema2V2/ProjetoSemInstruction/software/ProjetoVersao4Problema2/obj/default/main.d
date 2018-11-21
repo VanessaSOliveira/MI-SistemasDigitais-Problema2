@@ -15,7 +15,8 @@ obj/default/main.o: main.c ../ProjetoVersao4Problema2_bsp//HAL/inc/io.h \
  ../ProjetoVersao4Problema2_bsp//HAL/inc/sys/alt_dev.h \
  ../ProjetoVersao4Problema2_bsp//HAL/inc/sys/alt_llist.h \
  ../ProjetoVersao4Problema2_bsp//HAL/inc/priv/alt_dev_llist.h \
- ../ProjetoVersao4Problema2_bsp//drivers/inc/altera_avalon_uart_regs.h
+ ../ProjetoVersao4Problema2_bsp//drivers/inc/altera_avalon_uart_regs.h \
+ ../ProjetoVersao4Problema2_bsp//drivers/inc/altera_avalon_jtag_uart_regs.h
 
 ../ProjetoVersao4Problema2_bsp//HAL/inc/io.h:
 
@@ -52,3 +53,5 @@ obj/default/main.o: main.c ../ProjetoVersao4Problema2_bsp//HAL/inc/io.h \
 ../ProjetoVersao4Problema2_bsp//HAL/inc/priv/alt_dev_llist.h:
 
 ../ProjetoVersao4Problema2_bsp//drivers/inc/altera_avalon_uart_regs.h:
+
+../ProjetoVersao4Problema2_bsp//drivers/inc/altera_avalon_jtag_uart_regs.h:

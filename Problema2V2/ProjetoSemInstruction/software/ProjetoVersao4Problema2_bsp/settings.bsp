@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>19/11/2018 14:23:18</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1542644598893</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Nov 21, 2018 11:49:26 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1542808166254</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\intelFPGA_lite\18.1\ProjetoSemInstruction\software\ProjetoVersao4Problema2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\ProjetoSemInstruction.sopcinfo</SopcDesignFile>
@@ -194,7 +194,7 @@
                 <SettingName>hal.stdin</SettingName>
                 <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>jtag_uart_0</Value>
+                <Value>uart_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Slave descriptor of STDIN character-mode device. This setting is used by the ALT_STDIN family of defines in system.h.</Description>
@@ -206,7 +206,7 @@
                 <SettingName>hal.stdout</SettingName>
                 <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>jtag_uart_0</Value>
+                <Value>uart_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Slave descriptor of STDOUT character-mode device. This setting is used by the ALT_STDOUT family of defines in system.h.</Description>
@@ -218,7 +218,7 @@
                 <SettingName>hal.stderr</SettingName>
                 <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>jtag_uart_0</Value>
+                <Value>uart_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Slave descriptor of STDERR character-mode device. This setting is used by the ALT_STDERR family of defines in system.h.</Description>
