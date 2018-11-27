@@ -21,7 +21,7 @@
    {
       datum baseAddress
       {
-         value = "135216";
+         value = "135248";
          type = "String";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum baseAddress
       {
-         value = "135232";
+         value = "135264";
          type = "String";
       }
    }
@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "135200";
+         value = "135232";
          type = "String";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "135248";
+         value = "135280";
          type = "String";
       }
    }
@@ -93,7 +93,7 @@
    {
       datum baseAddress
       {
-         value = "135336";
+         value = "135368";
          type = "String";
       }
    }
@@ -105,11 +105,19 @@
          type = "int";
       }
    }
+   element lcd_16207_0.clk
+   {
+      datum _tags
+      {
+         value = "";
+         type = "String";
+      }
+   }
    element lcd_16207_0.control_slave
    {
       datum baseAddress
       {
-         value = "135312";
+         value = "135344";
          type = "String";
       }
    }
@@ -125,7 +133,7 @@
    {
       datum baseAddress
       {
-         value = "135296";
+         value = "135328";
          type = "String";
       }
    }
@@ -141,7 +149,7 @@
    {
       datum baseAddress
       {
-         value = "135280";
+         value = "135312";
          type = "String";
       }
    }
@@ -157,7 +165,7 @@
    {
       datum baseAddress
       {
-         value = "135264";
+         value = "135296";
          type = "String";
       }
    }
@@ -203,9 +211,14 @@
    }
    element uart_0.s1
    {
+      datum _tags
+      {
+         value = "";
+         type = "String";
+      }
       datum baseAddress
       {
-         value = "135168";
+         value = "135200";
          type = "String";
       }
    }
@@ -435,7 +448,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="18" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x19CA0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='uart_0.s1' start='0x21000' end='0x21020' /><slave name='botaoSubir.s1' start='0x21020' end='0x21030' /><slave name='botaoDescer.s1' start='0x21030' end='0x21040' /><slave name='botaoEntrar.s1' start='0x21040' end='0x21050' /><slave name='botaoVoltar.s1' start='0x21050' end='0x21060' /><slave name='ledVermelho.s1' start='0x21060' end='0x21070' /><slave name='ledVerde.s1' start='0x21070' end='0x21080' /><slave name='ledAzul.s1' start='0x21080' end='0x21090' /><slave name='lcd_16207_0.control_slave' start='0x21090' end='0x210A0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x210A8' end='0x210B0' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x19CA0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='uart_0.s1' start='0x21020' end='0x21040' /><slave name='botaoSubir.s1' start='0x21040' end='0x21050' /><slave name='botaoDescer.s1' start='0x21050' end='0x21060' /><slave name='botaoEntrar.s1' start='0x21060' end='0x21070' /><slave name='botaoVoltar.s1' start='0x21070' end='0x21080' /><slave name='ledVermelho.s1' start='0x21080' end='0x21090' /><slave name='ledVerde.s1' start='0x21090' end='0x210A0' /><slave name='ledAzul.s1' start='0x210A0' end='0x210B0' /><slave name='lcd_16207_0.control_slave' start='0x210B0' end='0x210C0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x210C8' end='0x210D0' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -462,7 +475,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="18" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x19CA0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x210A8' end='0x210B0' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x19CA0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='uart_0.s1' start='0x21020' end='0x21040' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x210C8' end='0x210D0' /></address-map>]]></parameter>
   <parameter name="internalIrqMaskSystemInfo" value="3" />
   <parameter name="manuallyAssignCpuID" value="true" />
   <parameter name="mmu_TLBMissExcOffset" value="0" />
@@ -606,7 +619,7 @@
    start="nios2_qsys_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000210a8" />
+  <parameter name="baseAddress" value="0x000210c8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -615,7 +628,7 @@
    start="nios2_qsys_0.data_master"
    end="lcd_16207_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00021090" />
+  <parameter name="baseAddress" value="0x000210b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -633,7 +646,7 @@
    start="nios2_qsys_0.data_master"
    end="ledAzul.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00021080" />
+  <parameter name="baseAddress" value="0x000210a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -642,7 +655,7 @@
    start="nios2_qsys_0.data_master"
    end="ledVerde.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00021070" />
+  <parameter name="baseAddress" value="0x00021090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -651,7 +664,7 @@
    start="nios2_qsys_0.data_master"
    end="ledVermelho.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00021060" />
+  <parameter name="baseAddress" value="0x00021080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -660,7 +673,7 @@
    start="nios2_qsys_0.data_master"
    end="botaoVoltar.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00021050" />
+  <parameter name="baseAddress" value="0x00021070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -669,7 +682,7 @@
    start="nios2_qsys_0.data_master"
    end="botaoEntrar.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00021040" />
+  <parameter name="baseAddress" value="0x00021060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -678,7 +691,7 @@
    start="nios2_qsys_0.data_master"
    end="botaoDescer.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00021030" />
+  <parameter name="baseAddress" value="0x00021050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -687,7 +700,7 @@
    start="nios2_qsys_0.data_master"
    end="botaoSubir.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00021020" />
+  <parameter name="baseAddress" value="0x00021040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -705,7 +718,7 @@
    start="nios2_qsys_0.data_master"
    end="uart_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00021000" />
+  <parameter name="baseAddress" value="0x00021020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -714,7 +727,7 @@
    start="nios2_qsys_0.instruction_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000210a8" />
+  <parameter name="baseAddress" value="0x000210c8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -733,6 +746,15 @@
    end="onchip_memory2_0.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00010000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_qsys_0.instruction_master"
+   end="uart_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00021020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="clk_0.clk" end="nios2_qsys_0.clk" />

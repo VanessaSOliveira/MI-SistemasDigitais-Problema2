@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2018.11.06.14:03:52 -->
+ <!-- 2018.11.19.14:15:42 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1541520232</value>
+  <value>1542644142</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -8287,7 +8287,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x19CA0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x210A8' end='0x210B0' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x19CA0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='uart_0.s1' start='0x21020' end='0x21040' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x210C8' end='0x210D0' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -8297,7 +8297,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x19CA0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='uart_0.s1' start='0x21000' end='0x21020' /><slave name='botaoSubir.s1' start='0x21020' end='0x21030' /><slave name='botaoDescer.s1' start='0x21030' end='0x21040' /><slave name='botaoEntrar.s1' start='0x21040' end='0x21050' /><slave name='botaoVoltar.s1' start='0x21050' end='0x21060' /><slave name='ledVermelho.s1' start='0x21060' end='0x21070' /><slave name='ledVerde.s1' start='0x21070' end='0x21080' /><slave name='ledAzul.s1' start='0x21080' end='0x21090' /><slave name='lcd_16207_0.control_slave' start='0x21090' end='0x210A0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x210A8' end='0x210B0' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x19CA0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='uart_0.s1' start='0x21020' end='0x21040' /><slave name='botaoSubir.s1' start='0x21040' end='0x21050' /><slave name='botaoDescer.s1' start='0x21050' end='0x21060' /><slave name='botaoEntrar.s1' start='0x21060' end='0x21070' /><slave name='botaoVoltar.s1' start='0x21070' end='0x21080' /><slave name='ledVermelho.s1' start='0x21080' end='0x21090' /><slave name='ledVerde.s1' start='0x21090' end='0x210A0' /><slave name='ledAzul.s1' start='0x210A0' end='0x210B0' /><slave name='lcd_16207_0.control_slave' start='0x210B0' end='0x210C0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x210C8' end='0x210D0' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -8880,7 +8880,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>jtag_uart_0</moduleName>
     <slaveName>avalon_jtag_slave</slaveName>
     <name>jtag_uart_0.avalon_jtag_slave</name>
-    <baseAddress>135336</baseAddress>
+    <baseAddress>135368</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -8888,7 +8888,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>lcd_16207_0</moduleName>
     <slaveName>control_slave</slaveName>
     <name>lcd_16207_0.control_slave</name>
-    <baseAddress>135312</baseAddress>
+    <baseAddress>135344</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -8904,7 +8904,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>ledAzul</moduleName>
     <slaveName>s1</slaveName>
     <name>ledAzul.s1</name>
-    <baseAddress>135296</baseAddress>
+    <baseAddress>135328</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -8912,7 +8912,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>ledVerde</moduleName>
     <slaveName>s1</slaveName>
     <name>ledVerde.s1</name>
-    <baseAddress>135280</baseAddress>
+    <baseAddress>135312</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -8920,7 +8920,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>ledVermelho</moduleName>
     <slaveName>s1</slaveName>
     <name>ledVermelho.s1</name>
-    <baseAddress>135264</baseAddress>
+    <baseAddress>135296</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -8928,7 +8928,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>botaoVoltar</moduleName>
     <slaveName>s1</slaveName>
     <name>botaoVoltar.s1</name>
-    <baseAddress>135248</baseAddress>
+    <baseAddress>135280</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -8936,7 +8936,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>botaoEntrar</moduleName>
     <slaveName>s1</slaveName>
     <name>botaoEntrar.s1</name>
-    <baseAddress>135232</baseAddress>
+    <baseAddress>135264</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -8944,7 +8944,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>botaoDescer</moduleName>
     <slaveName>s1</slaveName>
     <name>botaoDescer.s1</name>
-    <baseAddress>135216</baseAddress>
+    <baseAddress>135248</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -8952,7 +8952,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>botaoSubir</moduleName>
     <slaveName>s1</slaveName>
     <name>botaoSubir.s1</name>
-    <baseAddress>135200</baseAddress>
+    <baseAddress>135232</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -8968,7 +8968,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>uart_0</moduleName>
     <slaveName>s1</slaveName>
     <name>uart_0.s1</name>
-    <baseAddress>135168</baseAddress>
+    <baseAddress>135200</baseAddress>
     <span>32</span>
    </memoryBlock>
   </interface>
@@ -9263,7 +9263,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>jtag_uart_0</moduleName>
     <slaveName>avalon_jtag_slave</slaveName>
     <name>jtag_uart_0.avalon_jtag_slave</name>
-    <baseAddress>135336</baseAddress>
+    <baseAddress>135368</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -9281,6 +9281,14 @@ parameters are a RESULT of the module parameters. -->
     <name>onchip_memory2_0.s1</name>
     <baseAddress>65536</baseAddress>
     <span>40096</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>uart_0</moduleName>
+    <slaveName>s1</slaveName>
+    <name>uart_0.s1</name>
+    <baseAddress>135200</baseAddress>
+    <span>32</span>
    </memoryBlock>
   </interface>
   <interface name="d_irq" kind="interrupt_receiver" version="18.1">
@@ -11608,7 +11616,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x000210a8</value>
+   <value>0x000210c8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -11659,7 +11667,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00021090</value>
+   <value>0x000210b0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -11761,7 +11769,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00021080</value>
+   <value>0x000210a0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -11812,7 +11820,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00021070</value>
+   <value>0x00021090</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -11863,7 +11871,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00021060</value>
+   <value>0x00021080</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -11914,7 +11922,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00021050</value>
+   <value>0x00021070</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -11965,7 +11973,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00021040</value>
+   <value>0x00021060</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -12016,7 +12024,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00021030</value>
+   <value>0x00021050</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -12067,7 +12075,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00021020</value>
+   <value>0x00021040</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -12169,7 +12177,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00021000</value>
+   <value>0x00021020</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -12220,7 +12228,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x000210a8</value>
+   <value>0x000210c8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -12355,6 +12363,57 @@ parameters are a RESULT of the module parameters. -->
   <startModule>nios2_qsys_0</startModule>
   <startConnectionPoint>instruction_master</startConnectionPoint>
   <endModule>onchip_memory2_0</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="nios2_qsys_0.instruction_master/uart_0.s1"
+   kind="avalon"
+   version="18.1"
+   start="nios2_qsys_0.instruction_master"
+   end="uart_0.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00021020</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>nios2_qsys_0</startModule>
+  <startConnectionPoint>instruction_master</startConnectionPoint>
+  <endModule>uart_0</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
@@ -13560,7 +13619,7 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <plugin>
-  <instanceCount>15</instanceCount>
+  <instanceCount>16</instanceCount>
   <name>avalon</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>

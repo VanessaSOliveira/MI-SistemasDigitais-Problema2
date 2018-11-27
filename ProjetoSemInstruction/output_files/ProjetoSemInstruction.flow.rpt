@@ -1,5 +1,5 @@
 Flow report for ProjetoSemInstruction
-Tue Nov 06 12:24:15 2018
+Tue Nov 13 11:57:55 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 06 12:23:58 2018       ;
+; Flow Status                        ; Successful - Tue Nov 13 11:57:37 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ProjetoSemInstruction                       ;
 ; Top-level Entity Name              ; ProjetoSemInstruction                       ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+-----------------------+
 ; Option            ; Setting               ;
 +-------------------+-----------------------+
-; Start date & time ; 11/06/2018 12:18:29   ;
+; Start date & time ; 11/13/2018 11:53:31   ;
 ; Main task         ; Compilation           ;
 ; Revision Name     ; ProjetoSemInstruction ;
 +-------------------+-----------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 145667775154103.154151390712568        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 24272906810543.154211721012304         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -93,11 +93,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:03:26     ; 1.0                     ; 4927 MB             ; 00:02:23                           ;
-; Fitter               ; 00:01:14     ; 1.0                     ; 5429 MB             ; 00:00:35                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4710 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:11     ; 1.0                     ; 4815 MB             ; 00:00:07                           ;
-; Total                ; 00:04:55     ; --                      ; --                  ; 00:03:08                           ;
+; Analysis & Synthesis ; 00:02:27     ; 1.0                     ; 4925 MB             ; 00:01:58                           ;
+; Fitter               ; 00:00:54     ; 1.0                     ; 5417 MB             ; 00:00:31                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4710 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:14     ; 1.0                     ; 4812 MB             ; 00:00:08                           ;
+; Total                ; 00:03:41     ; --                      ; --                  ; 00:02:41                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

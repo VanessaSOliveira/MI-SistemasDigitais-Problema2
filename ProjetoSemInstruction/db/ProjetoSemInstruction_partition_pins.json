@@ -68,11 +68,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "botaoentrar_external_connection_export",
-					"strict" : false
-				},
-				{
-					"name" : "botaovoltar_external_connection_export",
+					"name" : "botaosubir_external_connection_export",
 					"strict" : false
 				},
 				{
@@ -80,7 +76,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "botaosubir_external_connection_export",
+					"name" : "botaoentrar_external_connection_export",
+					"strict" : false
+				},
+				{
+					"name" : "botaovoltar_external_connection_export",
 					"strict" : false
 				},
 				{

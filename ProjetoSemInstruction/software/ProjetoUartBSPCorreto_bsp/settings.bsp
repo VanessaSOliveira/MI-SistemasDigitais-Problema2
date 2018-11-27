@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Nov 6, 2018 12:24:30 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1541514270353</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>14/11/2018 12:11:45</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1542204706038</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\intelFPGA_lite\18.1\ProjetoSemInstruction\software\ProjetoUartBSPCorreto_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\ProjetoSemInstruction.sopcinfo</SopcDesignFile>

@@ -70,6 +70,8 @@ main(){
 	return 0;
 }
 
+/*******************************************************************************/
+
 void testeESP01(){
 
 	 alt_putstr("AT"); //Envia comando teste em serial
@@ -77,9 +79,21 @@ void testeESP01(){
 	 char response[2] = {'0','0'};
 	 int i =0;
 	 esperar();
+
+	 IOWR(LCD_16207_0_BASE, 0, 0x02);//limpa display
+	 usleep(2000);
+	 IOWR(LCD_16207_0_BASE, 0, 0x01); // coloca cursor no inicio
+	 usleep(2000);
+
 	 while(!strcmp(response, 'OK')){ //O ESP deve responder com um OK
 		 response[i]= IORD_ALTERA_AVALON_UART_RXDATA(UART_0_BASE);
+
+		 IOWR(LCD_16207_0_BASE, 2, response[i]);
+		 //printf("\n\nif caracter  : %c", response[i] );
+		 usleep(1000);
+
 		 i++;
+
 	 }
 	 if(strcmp(response, 'OK')){
 
@@ -93,6 +107,13 @@ void testeESP01(){
 
 
 }
+
+/*
+ * SSID - WLessLEDS
+ * Senha - HelloWorldMP31
+ * Endereço do Broker - rpibroker.local
+ *
+ */
 
 void conectaESP01(){
 
@@ -116,11 +137,11 @@ void conectaESP01(){
 	 }
 
 
-	 alt_putstr("AT+CWJAP_CUR=HomeNetwork,12345678");
+	 alt_putstr("AT+CWJAP_CUR=WLessLEDS,HelloWorldMP31");
 
 	 char response3[200]; //Responde com a instrução AT enviada
 	 i =0;
-	 while(!strcmp(response3, 'AT+CWJAP_CUR=HomeNetwork,12345678')){ //O ESP deve responder com um OK
+	 while(!strcmp(response3, 'AT+CWJAP_CUR=WLessLEDS,HelloWorldMP31')){ //O ESP deve responder com um OK
 		 response3[i]= IORD_ALTERA_AVALON_UART_RXDATA(UART_0_BASE);
 		 i++;
 	 }
@@ -135,6 +156,21 @@ void conectaESP01(){
 
 }
 
+void escreveLCDGenerico(char* palavra, int n){ // n é o tamanho da palavra
+
+	IOWR(LCD_16207_0_BASE, 0, 0x02);//limpa display
+	usleep(2000);
+	IOWR(LCD_16207_0_BASE, 0, 0x01); // coloca cursor no inicio
+	usleep(2000);
+
+	int i;
+	for(i=0; i<n ;i++){
+		IOWR(LCD_16207_0_BASE, 2, palavra[i]);
+		//printf("\n\nif palavra  : %c", palavra[i] );
+		usleep(1000);
+	}
+}
+/******************************************************************************/
 
 void acendeLed(int opcao){
 	switch(opcao){
@@ -245,6 +281,8 @@ void escreveLCD(int posicao, int selecao){ //selecao=0 - ta no menu, selecao=1 e
 	}
 
 }
+
+
 
 
 
